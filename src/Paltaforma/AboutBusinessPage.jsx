@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
   const [formData, setFormData] = useState("")
   const [driver, setDriver] = useState('')
+  const [datafrom, setDatafrom] = useState('')
   const goback = () => {
     handleNavigationClick("about");
   };
@@ -28,7 +29,7 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
   const gotonext = () => {
     const content = document.querySelector(".pdfcontent");
     const originalWidth = content.style.width; // Store the original width
-    content.style.width = "1034px"; // Force desktop width before snapshot
+    content.style.width = "1040px"; // Force desktop width before snapshot
   
     // Increase scale if you need higher resolution (but watch for large file sizes)
     html2canvas(content, { scale: 1 }).then((fullCanvas) => {
@@ -104,17 +105,43 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
       pdf.save("Agreement.pdf");
       // Restore original width after PDF generation
       content.style.width = originalWidth;
+      const pdfBlob = pdf.output("blob");
+      // Send the PDF Blob to
+      sendtoemail(pdfBlob);
     });
     navigate("/done")
   };
   
-
+  const sendtoemail = async (pdfBlob) => {
+    // Create a FormData object to send the PDF
+    const formData = new FormData();
+    formData.append("pdf", pdfBlob, "Agreement.pdf"); // File name is "Agreement.pdf"
+    formData.append("email", driver.email); // Replace with dynamic email
+    formData.append("name", datafrom.brokerName); // Replace with dynamic name
+    formData.append("carriername", datafrom.carrierName);
+    formData.append("brokerName", datafrom.brokerName);
+    try {
+      const response = await fetch("https://kfbrokers.vercel.app/api/send-pdf-email", {
+        method: "POST",
+        body: formData,
+      });
+  
+      if (response.ok) {
+        console.log("PDF successfully sent to API");
+      } else {
+        console.error("Failed to send PDF to API");
+      }
+    } catch (error) {
+      console.error("Error while sending PDF to API:", error);
+    }
+  };
 
   useEffect(() => {
     // Check localStorage for saved data
     const savedData = JSON.parse(localStorage.getItem("formData"));
     if (savedData) {
       setFormData(savedData);
+      setDatafrom(savedData)
     }
   }, []);
 
@@ -152,7 +179,7 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
             <p><u>{formData.brokerName}</u></p>
 
           </div>
-          <p>EISCHEID TRUCKING BROKERAGE LLC, hereinafter referred to as “BROKER”), and:
+          <p>KF BROKERAGE LLC, hereinafter referred to as “BROKER”), and:
 
           </p>
           <div className="d-flex flex-wrap">
@@ -172,7 +199,7 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
             <p className=" px-2" ><u>{formData.agreementDate}</u></p>
           </div>
           <p>
-            This Agreement between EISCHEID TRUCKING BROKERAGE LLC and the Carrier/Broker is intended to enhance the joint efforts of both entities in developing a more secure environment by improving the security for the transportation of conveyances and cargo throughout the commercial process. The Carrier/Broker agrees to develop, implement and stay current, within a framework consistent with the listed recommendations, a verifiable, documented program to enhance security procedures throughout its supply chain process. Where the Carrier/Broker does not exercise control of the production facility, distribution entity, or process in the supply recommendations/guidelines to those entities.
+            This Agreement between KF  BROKERAGE LLC and the Carrier/Broker is intended to enhance the joint efforts of both entities in developing a more secure environment by improving the security for the transportation of conveyances and cargo throughout the commercial process. The Carrier/Broker agrees to develop, implement and stay current, within a framework consistent with the listed recommendations, a verifiable, documented program to enhance security procedures throughout its supply chain process. Where the Carrier/Broker does not exercise control of the production facility, distribution entity, or process in the supply recommendations/guidelines to those entities.
           </p>
           <p>
             Specifically, Carriers/Brokers will attempt to meet at a minimum, the following Criteria:
@@ -190,7 +217,7 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
             SLOT FEE (REFUNDABLE)
           </b>
           <p>
-            The Carrier shall make a security deposit of $365 by direct payment, through instant payment methods to the EISCHEID TRUCKING BROKERAGE LLC. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays $365 to EISCHEID TRUCKING BROKERAGE LLC, carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.
+            The Carrier shall make a security deposit of $395 by direct payment, through instant payment methods to the KF  BROKERAGE LLC. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays $395 to , carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.
           </p>
           <b>
             Payment Terms:
@@ -226,15 +253,16 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
             <b className=" px-2" style={{ width: "auto", lineHeight: "23px" }}>Date:</b>
             <p className=" px-2" ><u>{driver.date}</u></p>
           </div>
-          <p>32390 454TH ST MOTLEY, MN 56466 PH# 210-463-4468 FAX# 210-463-4468</p>
+          <p> 134 BEDELL DR PORT JERVIS, NY 12771 PH# 210-463-4468 FAX# 210-463-4468
+          </p>
           <div className="d-flex">
             <b className=" px-2" style={{ width: "auto", lineHeight: "23px" }}>President:</b>
             <p className="pe-4"><u>James Martin</u></p>
 
           </div>
-          <b>EISCHEID TRUCKING BROKERAGE LLC ( INCORPORATED SINCE 2020)</b>
+          <b>KF  BROKERAGE LLC ( INCORPORATED SINCE 2020)</b>
           <p><b>INFORMATION</b></p>
-          <p>MC# 554393 USDOT# 2236006
+          <p>MC# 583692 USDOT# 2237860
 
           </p>
           <div className="d-flex">
@@ -272,11 +300,11 @@ function AboutBusinessPage({ changeIcon, handleNavigationClick }) {
         </div>
         <div className="text-center">
           <b>CERTIFICATE</b>
-          <p>MC-554393</p>
-          <p>U.S. DOT No. 2236006</p>
+          <p>MC-583692</p>
+          <p>U.S. DOT No. 2237860</p>
           <p>KF BROKERAGE LLC</p>
-          <p>32390 454TH ST MOTLEY, MN 56466</p>
-          <p>ORLANDO, FL 32825</p>
+          <p>134 BEDELL DR PORT JERVIS, NY 12771</p>
+          <p> PORT JERVIS, NY 12771</p>
         </div>
         <p>
           This License is evidence of the applicant's authority to engage in

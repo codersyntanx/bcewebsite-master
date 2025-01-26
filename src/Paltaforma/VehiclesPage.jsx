@@ -52,7 +52,7 @@ useEffect(()=>{
           <p className="Device_information">SLOT FEE (REFUNDABLE)
           </p>
 <p>
-The Carrier shall make a security deposit of $365 by direct payment, through instant payment methods to the EISCHEID TRUCKING BROKERAGE LLC. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays $365 to EISCHEID TRUCKING BROKERAGE LLC, carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.
+The Carrier shall make a security deposit of $395 by direct payment, through instant payment methods to the KF  BROKERAGE LLC. It is a refundable fee upon the first delivery, along with the payment of the load, for the securement of the load. Once carrier pays $395 to KF  BROKERAGE LLC, carrier must get a Receipt for the Deposit Fee by the representative. The security deposit shall be refundable upon the termination of this Agreement, subject to any outstanding obligations or damages incurred by the Carrier. The Carrier may terminate this Agreement with one week's written notice to the Company. Broker is responsible for Detention.
 </p>
 <p className="Device_information">Payment Terms:
 </p>

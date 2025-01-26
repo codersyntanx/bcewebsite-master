@@ -42,25 +42,11 @@ function Contactus() {
 
     try {
       // 1) Append data
-      await axios.post(
-        "https://script.google.com/macros/s/AKfycbxmu6FJDDLYx18wTFBopr_OQrMmIvU7yXBQh7ENg0mlLgx_5QIFN9m_6Yb1srDu1LH57g/exec?action=addData",
-        {
-          Name: name,
-          Email: userEmail,
-          Phone: phone,
-          Message: message,
-        },
-        {
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8",
-            "User-Agent": "insomnia/8.4.5",
-          },
-        }
-      );
+
 
       // 2) Send email
       await axios.post(
-        "https://serverforstripe.vercel.app/api/sendemail",
+        "https://kfbrokers.vercel.app/api/send-contact-email",
         formData.data[0],
         {
           headers: {
@@ -175,7 +161,7 @@ function Contactus() {
                       <span>
                         <img src={email} alt="" />
                       </span>
-                      Operations@kfbrokecagellc.com
+                      alex@kfbrokerage.com
                     </a>
                     <a href="#">
                       <span>

@@ -161,12 +161,12 @@ function Tester (){
                 </div>
                 <div className="col-lg-6">
                   <div className="trucking__card">
-                    <a href="mailto:Operations@bceins.com">
+                    <a href="mailto:alex@kfbrokerage.com">
                       <span>
                         <img src={envolope} alt="" />
                       </span>
                       <small>Contact us by Email</small>
-                      <h4>operations@kfbrokeagellc.com</h4>
+                      <h4>alex@kfbrokerage.com</h4>
                     </a>
                   </div>
                 </div>

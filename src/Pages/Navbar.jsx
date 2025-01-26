@@ -86,7 +86,7 @@ function Navbar(){
               
                 </li>
                 <li>
-                  <Link to="/contactus">FAQ &amp; Resources</Link>
+                  <Link to="/contactus">Contact us</Link>
                 </li>
                 <li>
                 <Link to="/aboutus">About Us</Link>

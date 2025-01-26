@@ -150,7 +150,7 @@ function StartPage({ changeIcon, handleNavigationClick }) {
             </div>
 
             <p>
-              This Agreement between EISCHEID TRUCKING BROKERAGE LLC and the Carrier/Broker is intended to enhance the joint efforts of both entities in developing a more secure environment by improving the security for the transportation of conveyances and cargo throughout the commercial process.
+              This Agreement between KF  BROKERAGE LLC and the Carrier/Broker is intended to enhance the joint efforts of both entities in developing a more secure environment by improving the security for the transportation of conveyances and cargo throughout the commercial process.
             </p>
           </div>
 

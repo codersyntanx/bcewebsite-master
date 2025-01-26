@@ -167,7 +167,7 @@ function DriversPage({ changeIcon, handleNavigationClick }) {
           </div>
         </div>
         <p>
-          32390 454TH ST MOTLEY, MN 56466 PH# 210-463-4468 FAX# 210-463-4468
+        134 BEDELL DR PORT JERVIS, NY 12771 PH# 210-463-4468 FAX# 210-463-4468
 
 
         </p>
@@ -178,7 +178,7 @@ function DriversPage({ changeIcon, handleNavigationClick }) {
 
         </b></p>
         <p><b>INFORMATION</b></p>
-        <p>MC# 554393 USDOT# 2236006
+        <p>MC# 583692 USDOT# 2237860
 
         </p>
         <div className="name-part">

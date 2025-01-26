@@ -11,7 +11,7 @@ import React from "react"
 class Footer extends React.Component {
   handleEmailClick = () => {
     console.log('Email link clicked');
-    window.location.href = 'mailto:Operations@bceins.com';
+    window.location.href = 'mailto:alex@kfbrokerage.com';
   }
   
   handlePhoneClick = () => {
@@ -80,7 +80,7 @@ class Footer extends React.Component {
   <span>
     <img src={envolope} alt="" />
   </span>{" "}
-  Operations@kfbrokecagellc.com
+  alex@kfbrokerage.com
 </Link>
 <Link  onClick={this.handlePhoneClick}>
   <span>
@@ -122,7 +122,7 @@ class Footer extends React.Component {
         </div>
       </div> */}
       <div className="footer__copyright__area">
-        <p>© 2023 All Rights Reserved. KF BROKEAGE, LLC</p>
+        <p>© 2023 All Rights Reserved. KF BROKARAGE, LLC</p>
       </div>
     </div>
   </section>

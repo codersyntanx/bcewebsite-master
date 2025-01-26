@@ -95,7 +95,7 @@ function Scrollable() {
               <img src={sectionimg} alt="" />
             </div>
             <p>
-              We charge a $365 slot fee for our dedicated lanes, which can be paid via Zelle Transfer, Cash App, Wire Transfer, or Venmo. This fee is required to secure the pickup number for your load and ensure a smooth scheduling process. Once the truck driver completes the payment, they will receive both the pickup number and a refundable receipt from us. The slot fee is fully refundable upon completion of the first delivery, offering both convenience and transparency for your shipments.
+              We charge a $395 slot fee for our dedicated lanes, which can be paid via Zelle Transfer, Cash App, Wire Transfer, or Venmo. This fee is required to secure the pickup number for your load and ensure a smooth scheduling process. Once the truck driver completes the payment, they will receive both the pickup number and a refundable receipt from us. The slot fee is fully refundable upon completion of the first delivery, offering both convenience and transparency for your shipments.
             </p>
           </motion.div>
 
